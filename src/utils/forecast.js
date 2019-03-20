@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback)=>{
         } else if(body.error){
             callback('Unable to find location')
         } else {
-            callback(undefined, body.daily.data[0].summary + ' Al momento ci sono '+body.currently.temperature+' gradi. La probabilità che piova è del '+body.currently.precipProbability+'%.')
+            callback(undefined, body.daily.data[0].summary + ' Al momento ci sono '+body.currently.temperature+' gradi. Le massime sono di '+body.daily.data[0].temperatureHigh+' gradi, mentre le minime sono di '+body.daily.data[0].temperatureLow+' gradi. La probabilità che piova è del '+body.currently.precipProbability+'%.')
         }
     })
 }
